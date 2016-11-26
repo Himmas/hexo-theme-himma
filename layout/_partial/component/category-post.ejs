@@ -3,7 +3,11 @@
         <div class="head">
             <label class="head-label"><%= location %></label>
             <i class="iconfont icon-location article-item"></i>
-            <span>非常好!目前工计183篇日志。继续努力。</span>
+            <% if(!!page.category) { %>
+            <span>当前分类共有<%= page.posts.length %>篇日志</span>
+            <% }else{ %>
+                <span>共计<%= site.categories.length %>个分类</span>
+            <% } %>
         </div>
         <div class="article-box-body">
             <% if(!!page.category) { %>
