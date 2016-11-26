@@ -1,0 +1,11 @@
+<%- partial('_partial/component/header') %>
+
+<!--这个是章节目录-->
+<!--<%- partial('_partial/component/toc') %>-->
+
+<div class="content content-post<%= theme.post.header_align ? ' ' + theme.post.header_align : '' %>">
+   <%- partial('_partial/article', {post: page, index: false}) %>
+</div>
+
+
+<%- partial('_partial/component/back-top', {showBacktop: theme.backtop.post}) %>

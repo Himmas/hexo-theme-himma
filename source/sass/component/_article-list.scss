@@ -1,0 +1,136 @@
+.list-container{
+    padding: $avatar-space $head-inner-height;
+}
+.article-list-box{
+    position: relative;
+    .head{
+        i.article-item{
+            color: #d5d5d5;
+            font-size: 20px;
+            background: #fff;
+        }
+        .head-label{
+            position: relative;
+            display: block;
+            width: $icon-width;
+            font-size: 12px;
+            color: #888;
+            z-index: 9;
+            left: ($left-line - $icon-width)/2;
+            text-align: center;
+            background: #fff;
+        }
+        span{
+            position: absolute;
+            left: $left-blank;
+            color: #444;
+        }
+    }
+    i.article-item{
+        position: relative;
+        display: inline-block;
+        width: $icon-width;
+        left: ($left-line - $icon-width)/2;
+        color: #aaa;
+        z-index: 9;
+        text-align: center;
+    }
+    .article-box-body{
+        .collection-title{
+            position: relative;
+            margin: 60px 0;
+            h2{
+                margin-left: $left-blank;
+                color: #555555;
+            }
+            &:before{
+                content: " ";
+                position: absolute;
+                top: 50%;
+                margin-top: -$year-circle/2;
+                width: $year-circle;
+                height: $year-circle;
+                left: ($left-line - $year-circle)/2;
+                background: #bbb;
+                border-radius: 50%;
+                z-index: 9;
+            }
+            &.item-title-0:before {
+                background: #1abc9c;
+            }
+            &.item-title-1:before {
+                background: #3498db;
+            }
+            &.item-title-2:before {
+                background: #9b59b6;
+            }
+            &.item-title-3:before {
+                background: #e67e22;
+            }
+            &.item-title-4:before {
+                background: #e74c3c;
+            }
+        }
+        .article-item{
+            margin: 30px 0;
+            .post-header{
+                position: relative;
+                border-bottom: 1px dashed #ccc;
+                &:before{
+                    content: " ";
+                    position: absolute;
+                    top: 50%;
+                    width: $article-item-circle;
+                    height: $article-item-circle;
+                    margin-top: - $article-item-circle/2;
+                    left: ($left-line - $article-item-circle)/2 - 1px;
+                    //margin-left: -4px;
+                    background: #bbb;
+                    border-radius: 50%;
+                    border: 1px solid #fff;
+                    transition-duration: 0.2s;
+                    transition-timing-function: ease-in-out;
+                    transition-delay: 0s;
+                    transition-property: background;
+                    z-index: 9;
+                }
+                .post-title{
+                    margin-left: 70px;
+                    font-size: 16px;
+                    font-weight: normal;
+                    .post-title-link{
+                        color: #666;
+                        border-bottom: none;
+                    }
+                }
+                .post-meta{
+                    position: absolute;
+                    font-size: 12px;
+                    left: 30px;
+                    top: 5px;
+                    line-height: 2;
+                }
+            }
+            &:hover{
+                .post-header{
+                    border-color: #333;
+                    &:before{
+                        background: #333;
+                    }
+                }
+            }
+        }
+        .article-type-normal{
+        }
+    }
+}
+.article-list-box:after{
+    width: 4px;
+    height: 100%;
+    content: " ";
+    position: absolute;
+    left: 1px;
+    margin-left: -1px;
+    background: #f5f5f5;
+    top: 0;
+}

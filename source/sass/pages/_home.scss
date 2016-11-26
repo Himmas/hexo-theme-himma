@@ -1,0 +1,18 @@
+.home-content-box {
+    margin: 50px auto;
+    background: #fff;
+    width: $head-inner-width;
+    .page-box{
+        margin-left: $avatar-space;
+        margin-right: $avatar-space;
+        border: 1px solid transparent;
+    }
+    .br{
+        position: relative;
+        width: $article-br-width;
+        height: $article-br-height;
+        background: #ccc;
+        left: 50%;
+        margin-left: - $article-br-width/2;
+    }
+}

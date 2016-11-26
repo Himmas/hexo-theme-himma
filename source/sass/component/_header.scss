@@ -1,0 +1,141 @@
+.head-box {
+    position: relative;
+    background: #fff;
+    width: 100%;
+    height: $head-box-height;
+    border-top: $head-line solid #666;
+    .head-inner{
+        position: absolute;
+        top: 0;left: 0;right: 0;bottom: 0;
+        margin: auto;
+        width: $head-inner-width;
+        height: 100%;
+        .info-box{
+            position: absolute;
+            width: $inner-box-width;
+            height: $head-inner-height;
+            background: #fff;
+            display: flex;
+            padding:$avatar-space/2;
+            box-sizing: border-box;
+            .avatar{
+                display: inline-block;
+                padding: $avatar-space/2;
+                box-sizing: border-box;
+                width: $head-inner-height - $avatar-space;
+                height: $head-inner-height - $avatar-space;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .detail-info{
+                flex: 1;
+                padding: $avatar-space/2;
+                .name{
+                    margin: 0;
+                    color: #888;
+                    font-weight: normal;
+                    //margin-left: 5px;
+                    font-size: 2em;
+                    line-height: inherit;
+                }
+                .slogan{
+                    color: #999;
+                    font-size: .8em;
+                    //margin-left: 5px;
+                }
+                hr{
+                    height: 1px;
+                    margin-bottom: -1px;
+                    border: none;
+                    //width: $inner-box-width - $head-inner-height + 10px;
+                    background: #eee;
+                    //background-image: -webkit-linear-gradient(0deg, transparent,#d5d5d5 5%, #d5d5d5 95%, transparent );
+                }
+                .link-box{
+                    .link-item-box{
+                        margin: 0 3px;
+                        font-size: .8em;
+                        color: #888;
+                        i{
+                            line-height: 2em;
+                        }
+                        span{
+                            line-height: 2em;
+                        }
+                    }
+                    .link-item-box:hover{
+                        color: #333;
+                    }
+                }
+            }
+        }
+        .menu-box{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 0;
+            .menu-item{
+                display: inline-block;
+                width: $menu-size;
+                height: $menu-size;
+                text-align: center;
+                margin-left: 2px;
+                i{
+                    color: #fff;
+                    line-height: $menu-size;
+                    font-size: 20px;
+                }
+            }
+            .menu-item:nth-child(1){
+                background-color: #fbd5d4;
+            }
+            .menu-item:nth-child(2){
+                background-color: #e6dcef;
+            }
+            .menu-item:nth-child(3){
+                background-color: #d9e4f0;
+            }
+            .menu-item:nth-child(4){
+                background-color: #daf1f9;
+            }
+            .menu-item:nth-child(5){
+                background-color: #d9f0e8;
+            }
+            .menu-item:nth-child(6){
+                background-color: #beebe5;
+            }
+            .menu-item:nth-child(7){
+                background-color: #e5ebbb;
+            }
+            .menu-item:nth-child(8){
+                background-color: #f3e8b5;
+            }
+            .menu-item:nth-child(1):hover{
+                background-color: #ffb1ae;
+            }
+            .menu-item:nth-child(2):hover{
+                background-color: #dbbff5;
+            }
+            .menu-item:nth-child(3):hover{
+                background-color: #b4d3f5;
+            }
+            .menu-item:nth-child(4):hover{
+                background-color: #b6e8f9;
+            }
+            .menu-item:nth-child(5):hover{
+                background-color: #b0f1da;
+            }
+            .menu-item:nth-child(6):hover{
+                background-color: #9feae0;
+            }
+            .menu-item:nth-child(7):hover{
+                background-color: #e1ec93;
+            }
+            .menu-item:nth-child(8):hover{
+                background-color: #f7e48d;
+            }
+        }
+    }
+}
