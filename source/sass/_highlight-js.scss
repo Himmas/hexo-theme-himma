@@ -319,6 +319,8 @@ a.button.white {
 .highlight table,
 .highlight tr,
 .highlight td {
+  border: none;
+  background: transparent;
   width: 100%;
   border-collapse: collapse;
   padding: 0;
