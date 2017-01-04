@@ -68,7 +68,7 @@
 //======================================================
 
 function getCurrentDate(date){
-    var month = (date.month()/10)<1? `0${date.month()}`:`${date.month()}`
+    var month = ((date.month()+1)/10)<1? `0${(date.month()+1)}`:`${(date.month()+1)}`
     var day = (date.date()/10)<1? `0${date.date()}`:`${date.date()}`
     return `${date.year()}-${month}-${day}`
 }
