@@ -349,7 +349,8 @@ a.button.white {
 .highlight.html:after,
 .highlight.js:after,
 .highlight.bash:after,
-.highlight.css:after {
+.highlight.css:after,
+.highlight.python:after{
   position: absolute;
   top: 0;
   right: 0;
@@ -373,4 +374,6 @@ a.button.white {
 .highlight.css:after {
   content: 'CSS';
 }
-
+.highlight.python:after {
+  content: 'Python';
+}
