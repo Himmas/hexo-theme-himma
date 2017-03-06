@@ -316,6 +316,11 @@ a.button.white {
   line-height: 1.1em;
   border-radius: 2px;
 }
+
+.highlight table{
+  overflow: auto;
+}
+
 .highlight table,
 .highlight tr,
 .highlight td {
@@ -362,9 +367,10 @@ a.button.white {
 .highlight.js:after {
   content: 'JS';
 }
-.highlight.code:after {
+.highlight.bash:after {
   content: 'Shell';
 }
-.highlight.code:after {
+.highlight.css:after {
   content: 'CSS';
 }
+
