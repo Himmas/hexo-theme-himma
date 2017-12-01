@@ -16,3 +16,10 @@
         margin-left: - $article-br-width/2;
     }
 }
+
+@media all and (max-width: $container-width) {
+    .home-content-box{
+        width: 100%;
+    }
+
+}

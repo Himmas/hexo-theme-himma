@@ -45,14 +45,17 @@
     <% if (!index){ %>
     <div class="page-bar">
         <% if(page.prev){ %>
-        <a href="<%- url_for(page.prev.path) %>" class="prev-btn"><i
-                    class="iconfont icon-prev"></i><%= page.prev.title %></a>
+        <a href="<%- url_for(page.prev.path) %>" class="prev-btn">
+            <i class="iconfont icon-prev"></i>
+            <span class="title"><%= page.prev.title %></span>
+        </a>
         <% }else{ %>
         <a class="prev-btn"></a>
         <% } %>
         <% if(page.next){ %>
-        <a href="<%- url_for(page.next.path) %>" class="next-btn"><%= page.next.title %><i
-                    class="iconfont icon-next"></i></a>
+        <a href="<%- url_for(page.next.path) %>" class="next-btn">
+            <span class="title"><%= page.next.title %></span>
+            <i class="iconfont icon-next"></i></a>
         <% } %>
     </div>
     <% } %>

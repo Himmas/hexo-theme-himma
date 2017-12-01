@@ -6,11 +6,19 @@
         padding: 10px;
         white-space: nowrap;
         border-top: 1px solid #eee;
+        display: flex;
         a{
             color: #888;
             font-size: .8em;
-            width: 50%;
-            display: inline-block;
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            line-height: 20px;
+            .title{
+                flex: 1;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
             i{
                 font-size: .6em;
             }
@@ -241,9 +249,9 @@
 }
 
 @media screen and (max-width: 767px) {
-    .post-header {
-        display: none;
-    }
+    //.post-header {
+    //    display: none;
+    //}
     .content.content-post {
         .article-content,
         .post-title {
