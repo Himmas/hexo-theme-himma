@@ -1,56 +1,72 @@
 <div class="container article-container">
-  <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemprop="blogPost">
-    <header class="article-header">
-      <h1 class="post-title"><a href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a></h1>
+    <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>"
+             itemprop="blogPost">
+        <header class="article-header">
+            <h1 class="post-title"><a href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a></h1>
 
-      <div class="article-meta">
+            <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
         <span><%= date(post.date, 'YYYY.MM.DD') %></span>
       </span>
 
-        <% if (config.author){ %>
-        <span class="article-author">
+                <% if (config.author){ %>
+                <span class="article-author">
           <i class="icon-user"></i>
           <span><%= config.author %></span>
         </span>
-        <% } %>
+                <% } %>
 
-        <%- partial('component/category') %>
+                <%- partial('component/category') %>
 
-        <% if (theme.disqus_shortname && theme.url){ %>
-        <span>
+                <% if (theme.disqus_shortname && theme.url){ %>
+                <span>
           <i class="icon-comment"></i>
           <a href="<%= theme.url + url_for(page.path) + '#disqus_thread' %>"></a>
         </span>
+                <% } %>
+
+            </div>
+        </header>
+
+        <div class="article-content">
+            <% if (post.excerpt && index){ %>
+            <%- post.excerpt %>
+            <% if (theme.excerpt_link){ %>
+            <p class="article-more-link">
+                <a class="btn btn-primary more-btn" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+            </p>
+            <% } %>
+            <% } else { %>
+            <%- post.content %>
+            <% } %>
+        </div>
+    </article>
+    <% if (!index){ %>
+    <div class="page-bar">
+        <% if(page.prev){ %>
+        <a href="<%- url_for(page.prev.path) %>" class="prev-btn"><i
+                    class="iconfont icon-prev"></i><%= page.prev.title %></a>
+        <% }else{ %>
+        <a class="prev-btn"></a>
         <% } %>
-
-      </div>
-    </header>
-
-    <div class="article-content">
-      <% if (post.excerpt && index){ %>
-      <%- post.excerpt %>
-      <% if (theme.excerpt_link){ %>
-      <p class="article-more-link">
-        <a class="btn btn-primary more-btn" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
-      </p>
-      <% } %>
-      <% } else { %>
-      <%- post.content %>
-      <% } %>
+        <% if(page.next){ %>
+        <a href="<%- url_for(page.next.path) %>" class="next-btn"><%= page.next.title %><i
+                    class="iconfont icon-next"></i></a>
+        <% } %>
     </div>
-  </article>
-  <% if (!index){ %>
-  <div class="page-bar">
-    <%if(page.prev){%>
-    <a href="<%-url_for(page.prev.path)%>" class="prev-btn"><i class="iconfont icon-prev"></i><%= page.prev.title %></a>
-    <%}else{%>
-    <a class="prev-btn"></a>
-    <%}%>
-    <%if(page.next){%>
-    <a href="<%-url_for(page.next.path)%>" class="next-btn"><%= page.next.title %><i class="iconfont icon-next"></i></a>
-    <%}%>
-    </div>
-  <% } %>
+    <% } %>
 </div>
+
+<!--评论区-->
+<% if (theme.post.showComments){ %>
+<div class="container article-container">
+    <% if (theme.disqus_shortname){ %>
+        <%- partial('disqus') %>
+    <% } else if (theme.changyan_appid && theme.changyan_conf) { %>
+        <%- partial('changyan') %>
+    <% } %>
+    <% } else if (theme.duoshuo_shortname) { %>
+        <%- partial('duoshuo') %>
+</div>
+<% } %>

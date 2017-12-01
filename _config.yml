@@ -118,7 +118,7 @@ backtop:
 post:
   header_align: CENTER # LEFT|CENTER
   showToc: true # true|false
-  showComments: true
+  showComments: true #是否开启评论
 
 # =========================================================
 # 个性化设置
@@ -144,9 +144,14 @@ init_page_content: HOME_NAV  # HOME_NAV | POST
 google_analytics:
 baidu_analytics: 57e94d016e201fba3603a8a2b0263af0
 
-# Comment service
-disqus_shortname: kylinz
-# duoshuo_shortname: kylinz
+# Comment service 需要开启评论
+#disqus
+disqus_shortname: kylinz-1
+#多说
+duoshuo_shortname: kylinz
+#搜狐畅言
+changyan_appid: cytljyUmF
+changyan_conf: 27e7b3f7d4845feb22fc16d7fe1ff759
 
 
 # =========================================================
