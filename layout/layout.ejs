@@ -10,19 +10,6 @@
 
   <!--<%- partial('_partial/component/modal') %>-->
 
-  <!--评论区-->
-  <% if (page.layout === 'post' && theme.post.showComments ){ %>
-  <div class="container article-container">
-      <% if (theme.disqus_shortname){ %>
-      <%- partial('_partial/disqus') %>
-      <% } else if (theme.changyan_appid && theme.changyan_conf) { %>
-      <%- partial('_partial/changyan') %>
-      <% } %>
-      <% } else if (theme.duoshuo_shortname) { %>
-      <%- partial('_partial/duoshuo') %>
-  </div>
-  <% } %>
-
   <%- partial('_partial/load-script') %>
 </body>
 </html>
