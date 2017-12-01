@@ -62,11 +62,11 @@
 <% if (page.layout === 'post' && theme.post.showComments ){ %>
 <div class="container article-container">
     <% if (theme.disqus_shortname){ %>
-    <%- partial('disqus') %>
+        <%- partial('disqus') %>
     <% } else if (theme.changyan_appid && theme.changyan_conf) { %>
-    <%- partial('changyan',{sid: post.path}) %>
-    <% } %>
+        <%- partial('changyan',{sid: post.path}) %>
     <% } else if (theme.duoshuo_shortname) { %>
-    <%- partial('duoshuo') %>
+        <%- partial('duoshuo') %>
+    <% } %>
 </div>
 <% } %>
